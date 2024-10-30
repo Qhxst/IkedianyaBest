@@ -78,10 +78,21 @@ img{
     width:100%;
     height:auto;
 }
+    body{
+        margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    .maincontainer{
+    width: 100vw;
+    overflow:hidden;
+        
+    }
 </style>
 <body style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;overflow-x: hidden;">
 
-    <!-- large screen nav  -->
+ <div class="maincontainer">
+        <!-- large screen nav  -->
     <nav class="navbar navbar-expand-lg d-none d-lg-block" style="height: 70px;position: sticky;top: 0;background-color: white;z-index: 9999;box-shadow: 0 0 7px rgb(0,0,0,0.2);">
         <div class="container-fluid">
             <span class="collapse navbar-collapse">
@@ -179,11 +190,12 @@ img{
         <p style="font-weight: 100;font-size: 20px;">Here you will find more information about me, what I do, and my current skills mostly in terms <br> of programming and technology</p>
         </div>
         <br><br><br>
-        <div class="container">
-            <div class="row" style="text-align: justify;">
+        <div class="container" style="text-align:center;">
+            <div class="row" style="text-align: center;">
                <div class="container">
                     <div class="col-lg-6 col-md-6 col-12">
-                    <h5>GET TO KNOW ME!</h5>
+                    <div  style="text-align:justify;">
+                        <h5>GET TO KNOW ME!</h5>
                     <br>
                     <p style="line-height: 25px;">I'm a Frontend and Backend Web Developer building and managing the Front-end of Websites as well as managing the actions that occur in the background of Websites, that leads to the success of the overall product. Check out some of my work in the Projects section.
                     </p>
@@ -192,12 +204,14 @@ img{
                        I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me. 
                     </p>
                         
+                    </div>
                         
     
                 </div>
                </div>
                 <div class="col-lg-6 col-md-6 col-12" >
-                    <h5>MY SKILLS</h5>
+                    <div  style="text-align:justify;">
+                        <h5>MY SKILLS</h5>
                     <br>
                     <div style="display: flex;flex-wrap: wrap;gap: 10px;" data-aos="fade-left">
                     <span class="skills">HTML</span>
@@ -208,6 +222,7 @@ img{
                     <span class="skills">Python</span>
                     <span class="skills">Github</span>
                     
+                    </div>
                     </div>
                 </div>
             </div>
@@ -348,6 +363,7 @@ img{
             <br><br>
         </div>
     </div>
+ </div>
     
     
 
