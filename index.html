@@ -424,6 +424,18 @@ img{
         }
     }
 
+     // Smooth scroll behavior
+    scrollIconLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        const targetId = scrollIconLink.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
     window.addEventListener('scroll', toggleIcon);
 </script>
 
