@@ -229,7 +229,9 @@ img{
         </div>
         <br><br>
     </div>
-
+     <a href="#footer" id="scrollIconLink" style="position:fixed;bottom: 20px;left:20px;z-index: 9000;">
+        <i class="fa-solid fa-arrow-down" style="font-size: 30px;"></i>
+    </a>
     <div style="background-color: rgb(247, 246, 246);text-align: center;" id="projects">
         <br><br><br>
         <div class="container">
@@ -373,6 +375,27 @@ img{
     <!-- typed js -->
      <!-- Load library from the CDN -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+     <!-- arrow change js  -->
+  <script>
+    const scrollIconLink = document.getElementById('scrollIconLink');
+    const scrollIcon = scrollIconLink.querySelector('i');
+
+    function toggleIcon() {
+        const scrolledFromTop = window.scrollY;
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (scrolledFromTop >= scrollableHeight - 10) { // Near bottom of the page
+            scrollIcon.classList.replace('fa-arrow-down', 'fa-arrow-up');
+            scrollIconLink.setAttribute('href', '#home'); // Set link to top of the page
+        } else {
+            scrollIcon.classList.replace('fa-arrow-up', 'fa-arrow-down');
+            scrollIconLink.setAttribute('href', '#footer'); // Set link to bottom of the page
+        }
+    }
+
+    window.addEventListener('scroll', toggleIcon);
+</script>
 
   <!-- Setup and start animation! -->
   <script>
