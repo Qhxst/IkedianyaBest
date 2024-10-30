@@ -130,7 +130,7 @@ img{
     </nav>
     
     <!-- small screen nav  -->
-    <nav class="navbar navbar-expand-lg d-lg-none" style="height: 70px;position:fixed;background-color: white;z-index: 9999;box-shadow: 0 0 7px rgb(0,0,0,0.2);text-align: center;">
+    <nav class="navbar navbar-expand-lg d-lg-none" style="height: 70px;width:100%;position:fixed;background-color: white;z-index: 9999;box-shadow: 0 0 7px rgb(0,0,0,0.2);text-align: center;">
         <div class="container-fluid" >
             <div class="d-flex justify-content-center align-items-center">
                 
@@ -405,22 +405,28 @@ img{
     <!-- typed js -->
      <!-- Load library from the CDN -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    document.querySelectorAll('.offcanvas-body .nav-link').forEach(link => {
+<script>
+document.querySelectorAll('.offcanvas-body .nav-link').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();  // Prevent default anchor behavior
-    const targetId = this.getAttribute('href');  // Get target section ID
+    
+    const targetId = this.getAttribute('href');  // Get the target section ID
     const targetElement = document.querySelector(targetId);
 
-    // Smooth scroll to target section
+    // Scroll smoothly to the target section
     targetElement.scrollIntoView({ behavior: 'smooth' });
 
-    // Close the sidebar
-    const sidebar = document.getElementById('sidebar');
-    const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(sidebar);
-    bootstrapOffcanvas.hide();
+    // After scrolling, close the sidebar
+    targetElement.addEventListener('scrollend', () => {
+      const sidebar = document.getElementById('sidebar');
+      const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(sidebar);
+      bootstrapOffcanvas.hide();
+    });
   });
 });
+
+</script>
+    
 
 
   <!-- Setup and start animation! -->
