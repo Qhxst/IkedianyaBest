@@ -259,7 +259,7 @@ img{
         </div>
         <br><br>
     </div>
-     <a href="" id="scrollIconLink" style="position:fixed;bottom: 20px;left:20px;z-index: 9000;">
+     <a id="scrollIconLink" style="position:fixed;bottom: 20px;left:20px;z-index: 9000; cursor: pointer;">
         <i class="fa-solid fa-arrow-down" style="font-size: 30px;"></i>
     </a>
     <div style="background-color: rgb(247, 246, 246);text-align: center;" id="projects">
@@ -408,7 +408,7 @@ img{
 
      <!-- arrow change js  -->
   <script>
-    const scrollIconLink = document.getElementById('scrollIconLink');
+       const scrollIconLink = document.getElementById('scrollIconLink');
     const scrollIcon = scrollIconLink.querySelector('i');
 
     function toggleIcon() {
@@ -417,18 +417,18 @@ img{
 
         if (scrolledFromTop >= scrollableHeight - 10) { // Near bottom of the page
             scrollIcon.classList.replace('fa-arrow-down', 'fa-arrow-up');
-            scrollIconLink.setAttribute('href', '#home'); // Set link to top of the page
+            scrollIconLink.setAttribute('data-target', '#home'); // Set target to top of the page
         } else {
             scrollIcon.classList.replace('fa-arrow-up', 'fa-arrow-down');
-            scrollIconLink.setAttribute('href', '#footer'); // Set link to bottom of the page
+            scrollIconLink.setAttribute('data-target', '#footer'); // Set target to bottom of the page
         }
     }
 
-     // Smooth scroll behavior
+    // Handle click to scroll smoothly
     scrollIconLink.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
+        event.preventDefault(); // Prevent any default action
 
-        const targetId = scrollIconLink.getAttribute('href');
+        const targetId = scrollIconLink.getAttribute('data-target');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
